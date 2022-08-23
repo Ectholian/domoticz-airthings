@@ -1,6 +1,6 @@
 class AirthingsDevice:
     ""
-    model: str
+    model = str
     co2 = bool
     humidity = bool
     mold = bool
@@ -30,7 +30,7 @@ class AirthingsDevice:
             raise Exception("Unsupported device " + model)
   
 class AirthingsWave(AirthingsDevice):
-    model: "wave"
+    model = "wave"
     co2 = False
     humidity = True
     mold = False
@@ -41,7 +41,7 @@ class AirthingsWave(AirthingsDevice):
     voc = False
 
 class AirthingsWaveMini(AirthingsDevice):
-    model: "wave-mini"
+    model = "wave-mini"
     co2 = False
     humidity = True
     mold = True
@@ -52,7 +52,7 @@ class AirthingsWaveMini(AirthingsDevice):
     voc = True
     
 class AirthingsWavePlus(AirthingsDevice):
-    model: "wave-plus"
+    model = "wave-plus"
     co2 = True
     humidity = True
     mold = False
@@ -63,7 +63,7 @@ class AirthingsWavePlus(AirthingsDevice):
     voc = True
     
 class AirthingsWaveRadon(AirthingsDevice):
-    model: "wave-radon"
+    model = "wave-radon"
     co2 = False
     humidity = True
     mold = False
@@ -74,7 +74,7 @@ class AirthingsWaveRadon(AirthingsDevice):
     voc = False
     
 class AirthingsViewPlus(AirthingsDevice):
-    model: "view-plus"
+    model = "view-plus"
     co2 = True
     humidity = True
     mold = False
@@ -85,7 +85,7 @@ class AirthingsViewPlus(AirthingsDevice):
     voc = True
     
 class AirthingsViewPollution(AirthingsDevice):
-    model: "view-pollution"
+    model = "view-pollution"
     co2 = False
     humidity = True
     mold = False
@@ -96,7 +96,7 @@ class AirthingsViewPollution(AirthingsDevice):
     voc = False
     
 class AirthingsViewRadon(AirthingsDevice):
-    model: "view-radon"
+    model = "view-radon"
     co2 = False
     humidity = True
     mold = False
