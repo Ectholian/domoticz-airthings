@@ -1,2 +1,2 @@
-# domoticz-airthings-view-plus
-Domoticz plugin for Airthings View Plus
+# domoticz-airthings
+Domoticz plugin for Airthings
