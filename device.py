@@ -106,4 +106,44 @@ class AirthingsViewRadon(AirthingsDevice):
     temp = True
     voc = False
 
-print(AirthingsDevice.get("wave").model)
+@unique
+class domoticzType(IntEnum):
+    TEMP = 80,
+    HUMIDITY = 81,
+    GENERAL = 243
+    AIRQUALITY = 249
+
+@unique
+class domoticzSubtype(IntEnum):
+    HUMIDITY = 1,
+    AIRQUALIT =: 1,
+    TEMP = 5,
+    GENERAL_PRESSURE = 9,
+    GENERAL_CUSTOM = 31
+
+@unique
+class Unit(IntEnum):
+    """
+    Device Unit numbers
+    Define here your units numbers. These can be used to update your devices.
+    Be sure the these have a unique number!
+    """
+    CO2 = 1
+    HUMIDITY = 2
+    MOLD = 3
+    PM25 = 4
+    PRESSURE = 5
+    RADON = 6
+    TEMP = 7
+    VOC = 8
+    
+ UNITS = [
+        # id, name, type, subtype, options, used
+        [Unit.CO2, "Carbon Dioxide", domoticzType.AIRQUALITY, domoticzSubtype.AIRQUALITY, {}],
+        [Unit.HUMIDITY, "Humidity", domoticType.HUMIDITY, domoticzSubtype.HUMIDITY, {}],
+        [Unit.MOLD, "Mold Risk", domoticzType.GENERAL, domoticzSubtype.GENERAL_CUSTOM, {'Custom': '1;0-10'}],
+        [Unit.PM25, "Particulate Matter 2.5", domoticzType.GENERAL, domoticzSubtype.GENERAL_CUSTOM, {'Custom': '1;ug/m3'}],
+        [Unit.PRESSURE, "Air Pressure", domoticzType.GENERAL, domoticzSubtype.GENERAL_PRESSURE, {],
+        [Unit.RADON, "Radon", domoticzType.GENERAL, domoticzSubtype.GENERAL_CUSTOM, {'Custom': '1;Bq/m3'}],
+        [Unit.TEMP, "Temperature", domoticzType.TEMP, domoticzSubtype.TEMP, {}],
+        [Unit.VOC, "Airborne Chemicals", domoticzType.GENERAL, domoticzSubtype.GENERAL_CUSTOM, {'Custom': '1;ppb'}]
